@@ -1,13 +1,21 @@
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: './src/app.js',
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ['babel-loader']
+      },
+      {
+        test:/\.css$/,
+        use:['style-loader','css-loader']
+      },
+      {
+        test:/\.json$/, 
+        loader: 'json-loader'
       }
     ]
   },
@@ -24,6 +32,7 @@ module.exports = {
   ],
   devServer: {
     contentBase: './dist',
+    historyApiFallback: true,
     hot: true
   }
 };
