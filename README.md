@@ -1,7 +1,7 @@
 # Utility Data Viewer
 To start application:
 
--- clone repository
+clone repository, then run the following
 
 -- cd app
 
