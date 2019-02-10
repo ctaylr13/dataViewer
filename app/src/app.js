@@ -1,27 +1,17 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import './app.css';
+import axios from 'axios';
+import Main from "./Main";
 import * as serviceWorker from './serviceWorker';
-import UtilData from './posts/utilData';
+import BarChartComponent from './components/BarChartComponent';
+import LineChartComponent from './components/LineChartComponent';
 
-const title = 'Utility Data';
 
-
-class App extends Component {
-    render () {
-        return (
-            <div className='App'>
-                <p>Hello World</p>
-                <p>{title}</p>
-                <UtilData />
-            </div>
-        )
-    }
-}
-
-ReactDOM.render(<App />, document.getElementById('app'));
-
-export default App;
+ReactDOM.render(
+  <Main/>, 
+  document.getElementById("app")
+);
+// export default App;
 
 serviceWorker.unregister();
 
