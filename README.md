@@ -1,5 +1,5 @@
-# dataViewer
-to start application
+# Utility Data Viewer
+To start application:
 
 -- clone repository
 
