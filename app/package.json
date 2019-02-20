@@ -5,7 +5,12 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+    "client": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "client-prod": "webpack-dev-server --config ./webpack.config.js --mode production",
+    "server": "json-server --watch db.json --port 8080",
+    "start": "concurrently \"npm run server\" \"npm run client\" ",
+    "build": "concurrently \"npm run server\" \"npm run client-prod\" build",
+    "heroku-postbuild": "npm run build"
   },
   "keywords": [],
   "author": "",
@@ -16,11 +21,13 @@
     "@babel/preset-env": "^7.3.1",
     "@babel/preset-react": "^7.0.0",
     "babel-loader": "^8.0.5",
+    "concurrently": "^4.1.0",
     "json-loader": "^0.5.7",
     "react-hot-loader": "^4.6.5",
     "webpack": "^4.29.3",
     "webpack-cli": "^3.2.3",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "axios": "^0.18.0",
