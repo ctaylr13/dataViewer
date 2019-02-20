@@ -8,9 +8,7 @@
     "client": "webpack-dev-server --config ./webpack.config.js --mode development",
     "client-prod": "webpack-dev-server --config ./webpack.config.js --mode production",
     "server": "json-server --watch db.json --port 8080",
-    "start": "concurrently \"npm run server\" \"npm run client\" ",
-    "build": "concurrently \"npm run server\" \"npm run client-prod\" build",
-    "heroku-postbuild": "npm run build"
+    "start": "concurrently \"npm run server\" \"npm run client\" "
   },
   "keywords": [],
   "author": "",
@@ -34,6 +32,7 @@
     "chart.js": "^2.7.3",
     "css-loader": "^2.1.0",
     "eslint": "^5.13.0",
+    "express": "^4.16.4",
     "raw-loader": "^1.0.0",
     "react": "^16.8.1",
     "react-chartjs-2": "^2.7.4",
